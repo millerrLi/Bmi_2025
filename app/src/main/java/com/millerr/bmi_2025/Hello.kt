@@ -12,4 +12,11 @@ fun main() {
     println(name.get(1))
     name = "Jack"
     println(name)
+
+    val weight: Float = 65.5f
+    //true, false
+    val isAudit = false
+    //Char
+    val c = 'A'
+    println(c)
 }
