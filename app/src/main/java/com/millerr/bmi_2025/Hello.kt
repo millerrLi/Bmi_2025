@@ -4,9 +4,17 @@ class Hello {
 }
 
 fun main() {
-    val p = Person()
+    val p = Person("millerr", 82f, 1.71f)
+    val Hank = Person("Hank", 82f, 1.71f)
     p.hello()
+    println(p.name + " - " + p.bmi())
+    println(Hank.name + " - " + Hank.bmi())
 
+    val w = 83f
+    val h = 1.71f
+    val bmi = w / (h * h)
+    println("BMI:" + bmi)
+/*
     println("Hello Kotlin!")
     //Byte, Short, Int, Long
     val age: Int = 20
@@ -30,4 +38,6 @@ fun main() {
     //Char
     val c = 'A'
     println(c)
+
+ */
 }
