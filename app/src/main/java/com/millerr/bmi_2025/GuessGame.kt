@@ -9,6 +9,8 @@ class GuessGame {
 
     var secret = Random.nextInt(1, 11)
     var counter = 0
+    var status = Status.INIT
+
     fun guess(n: Int): Status{
         counter++
         return  if (n > secret) Status.SMALLER
