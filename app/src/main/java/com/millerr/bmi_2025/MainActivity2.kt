@@ -17,6 +17,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.room.Room
+import com.millerr.bmi_2025.database.GameDatabase
+import com.millerr.bmi_2025.database.Record
 import com.millerr.bmi_2025.databinding.ActivityMainBinding
 
 class MainActivity2 : AppCompatActivity() {
@@ -67,6 +70,20 @@ class MainActivity2 : AppCompatActivity() {
                     .show()
             }
         }
+        //Room test
+        val database = Room.databaseBuilder(this,
+            GameDatabase::class.java ,
+            "game.db")
+            .build()
+        val record = Record("millerr", 6)
+        Thread(){
+//            database.recordDao().insert(record)
+            val list = database.recordDao().getAll()
+            for (r in list){
+                Log.d(TAG, "onCreate: ${r.nickname}")
+            }
+        }.start()
+
     }
 
     fun guess(view: View) {

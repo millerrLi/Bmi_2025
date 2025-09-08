@@ -1,0 +1,9 @@
+package com.millerr.bmi_2025.database
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+
+@Database(entities = arrayOf(Record::class), version = 1)
+abstract class GameDatabase : RoomDatabase(){
+    abstract fun recordDao() : RecordDao
+}
